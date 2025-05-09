@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+    <link rel="icon" href="C:\Users\ADMIN\Documents\2nd year ux\front end\assignment 2\logo.png">
+</head>
+<body>
+    <div id="login-screen" class="screen">
+        <div class="login-left">
+            <img src="C:\Users\ADMIN\Documents\2nd year ux\front end\assignment 2\logo.png"alt="Flipkart Logo" class="logo">
+            <h1 class="flipkart-title">Flipkart</h1>
+            <p class="flipkart-tagline">ab har <span class="yellow">wish</span> hogi <span class="yellow">puri</span></p>
+        </div>
+        <div class="login-right">
+            <h2>Login</h2>
+            <p class="login-desc">Get access to your Orders, Wishlist and Recommendations</p>
+            <div class="input-group">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="username" placeholder="Enter Email/Mobile number">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
+            <p class="forgot">Forgot?</p>
+            <div class="login-buttons">
+                <button class="btn" onclick="login()">Login</button>
+                <button class="btn-outline">Request OTP</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="home-screen" class="hidden">
+        <div class="navbar">
+            <div class="navbar-top">
+               
+                <div class="brand-row">
+                    <img src="C:\Users\ADMIN\Documents\2nd year ux\front end\assignment 2\logo.png" alt="Logo" class="logo-small">
+                    <span class="flipkart-title-small">Flipkart</span>
+                </div>
+                <div class="search-bar-wrapper">
+                    <i class="fas fa-search search-bar-icon"></i>
+                    <input type="text" class="search-bar" placeholder="Search for products, brands and more">
+                </div>
+                <i class="fas fa-user icon"></i>
+                <i class="fas fa-bars icon" id="menu-btn"></i>
+                <i class="fas fa-shopping-cart icon"></i>
+                <button id="logout-btn" onclick="logout()">Logout</button>
+            </div>
+            <div class="navbar-categories-wrapper">
+                <div class="navbar-categories">
+                    <span>Electronics</span>
+                    <span>TVs & Appliances</span>
+                    <span>Men</span>
+                    <span>Women</span>
+                    <span>Baby & Kids</span>
+                    <span>Home & Furniture</span>
+                    <span>Sports, Books & More</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="main-left">
+              
+              <div class="offer-zone">
+                <span class="offer-badge">offer zone</span>
+                <p><strong>Get The best deals</strong> on mobile laptop, tablets and cameras</p>
+                <a href="#">shop now &gt;</a>
+              </div>
+          
+              
+              <div class="banner">
+                <img src="sale-banner-background-design-template-with-blue-orange-color_500223-389.avif" alt="Sale Banner" class="banner-img">
+                <div class="sale-live">SALE IS LIVE</div>
+              </div>
+          
+              
+              <div class="limited-offers">
+                <h4>LIMITED OFFERS <span class="ends-in">ENDS IN: <span class="timer">10 HRS 4 MIN 2 SEC</span></span></h4>
+                <div class="offers-row">
+                    <div class="offers-row">
+                        <div class="offer-card">
+                          <img src="samsung watch.jpg" alt="Samsung Watch">
+                          <p>Samsung Galaxy Watch</p>
+                          <p class="price">₹7,999</p>
+                        </div>
+                        <div class="offer-card">
+                          <img src="Xiaomi-Redmi-K50i-.jpeg" alt="Mobile Redmi K50i">
+                          <p>Redmi Note K50i</p>
+                          <p class="price">₹18,499</p>
+                        </div>
+                        <div class="offer-card">
+                          <img src="C:\Users\ADMIN\Documents\2nd year ux\front end\assignment 2\apple ipad.jpeg" alt="iPad">
+                          <p>Apple iPad 9th Gen</p>
+                          <p class="price">₹27,999</p>
+                        </div>
+                      </div>
+                 
+                </div>
+              </div>
+            </div>
+          
+            
+            <div class="main-right">
+              <div class="sidebar-card">
+                <img src="dress.jpg" alt="Only on the site">
+                <p><strong>Only on the Site</strong><br>today's deal only<br>from 10 am - 4 pm</p>
+                <a href="#">shop now &gt;</a>
+              </div>
+              <div class="sidebar-card">
+                <img src="samsung models.jpeg" alt="Samsung models">
+                <p><strong>Launching<br>Samsung models</strong></p>
+                <a href="#">shop now &gt;</a>
+              </div>
+              <div class="sidebar-card">
+                <img src="selfie stick.jpg" alt="Selfie sticks">
+                <p><strong>Selfie sticks</strong></p>
+                <a href="#">shop now &gt;</a>
+              </div>
+            </div>
+          </div>
+          
+        <div id="side-menu" class="side-menu-overlay">
+            <div class="side-menu-header">
+                <span class="side-menu-title">home</span>
+                <img src="C:\Users\ADMIN\Documents\2nd year ux\front end\assignment 2\logo.png" alt="Logo" class="side-menu-logo">
+                <span class="side-menu-close" id="close-menu"><i class="fas fa-times"></i></span>
+            </div>
+            <div class="side-menu-list">
+                <div class="side-menu-item"><i class="fas fa-th-large"></i> All categories</div>
+                <div class="side-menu-item"><i class="fas fa-plus"></i> Flipkart plus zone</div>
+                <div class="side-menu-item"><i class="fas fa-ellipsis-h"></i> more on flipkart</div>
+                <div class="side-menu-item"><i class="fas fa-language"></i> choose Language</div>
+                <div class="side-menu-item"><i class="fas fa-bullhorn"></i> Offer Zone</div>
+                <div class="side-menu-item"><i class="fas fa-assistive-listening-systems"></i> speech</div>
+                <div class="side-menu-item"><i class="fas fa-box"></i> my order</div>
+                <div class="side-menu-item"><i class="fas fa-ticket-alt"></i> my coupons</div>
+                <div class="side-menu-item"><i class="fas fa-shopping-cart"></i> my cart</div>
+                <div class="side-menu-item"><i class="fas fa-heart"></i> my wishlist</div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="accessibility-modal" class="modal-overlay hidden">
+      <div class="modal-dialog">
+        <button class="modal-close" id="close-accessibility"><i class="fas fa-times"></i></button>
+        <h2 class="modal-title">Accessibility</h2>
+        <div class="modal-section">
+          <div class="modal-section-title">VISION</div>
+          <div class="modal-card">
+            <div class="modal-option"><i class="fas fa-universal-access"></i> Voice Over <span class="modal-arrow">&gt;</span></div>
+            <div class="modal-option"><i class="fas fa-text-height"></i> Display &amp; Text size <span class="modal-arrow">&gt;</span></div>
+            <div class="modal-option"><i class="fas fa-audio-description"></i> Audio Description <span class="modal-arrow">&gt;</span></div>
+          </div>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-title">HEARING</div>
+          <div class="modal-card">
+            <div class="modal-option"><i class="fas fa-assistive-listening-systems"></i> Hearing Devices <span class="modal-arrow">&gt;</span></div>
+            <div class="modal-option"><i class="fas fa-closed-captioning"></i> Subtitles &amp; Captioning <span class="modal-arrow">&gt;</span></div>
+            <div class="modal-option"><i class="fas fa-toggle-on"></i> Hearing control Centre <span class="modal-arrow">&gt;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div id="voice-modal" class="modal-overlay hidden">
+      <div class="modal-dialog voice-modal-dialog">
+        <button class="modal-back" id="back-voice"><i class="fas fa-arrow-left"></i></button>
+        <button class="modal-close" id="close-voice"><i class="fas fa-times"></i></button>
+        <div class="voice-content">
+          <div class="voice-center">
+            <div class="voice-title">Speak now</div>
+            <div class="voice-dots">
+              <span class="voice-dot" style="background:#1976d2"></span>
+              <span class="voice-dot" style="background:#ffe500"></span>
+              <span class="voice-dot" style="background:#1976d2"></span>
+              <span class="voice-dot" style="background:#ffe500"></span>
+            </div>
+          </div>
+          <div class="voice-bottom">
+            <i class="fas fa-qrcode"></i>
+            <span class="voice-scan-text">Scan a Product</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="voice-settings-modal" class="modal-overlay hidden">
+      <div class="modal-dialog voice-settings-dialog">
+        <button class="modal-back" id="back-voice-settings"><i class="fas fa-arrow-left"></i></button>
+        <button class="modal-close" id="close-voice-settings"><i class="fas fa-times"></i></button>
+        <div class="voice-settings-content">
+          <div class="voice-settings-section">
+            <div class="voice-settings-title">Voice</div>
+            <div class="voice-settings-card">
+              <div class="voice-settings-row">
+                <div class="voice-settings-label">Language</div>
+                <div class="voice-settings-right">
+                  <span class="voice-settings-desc">English (India)</span>
+                  <span class="modal-arrow">&gt;</span>
+                </div>
+              </div>
+              <div class="voice-settings-row">
+                <div class="voice-settings-label">Spoken results</div>
+                <div class="voice-settings-right">
+                  <span class="voice-settings-desc">Results will be read aloud</span>
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="voice-settings-row">
+                <div class="voice-settings-label">Choose voice</div>
+                <div class="voice-settings-right">
+                  <span class="voice-settings-desc">Royal</span>
+                  <span class="modal-arrow">&gt;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="voice-settings-section">
+            <div class="voice-settings-title">Language</div>
+            <div class="voice-settings-card">
+              <div class="voice-settings-row">
+                <div class="voice-settings-label">Language settings</div>
+                <div class="voice-settings-right">
+                  <span class="modal-arrow">&gt;</span>
+                </div>
+              </div>
+              <div class="voice-settings-row">
+                <div class="voice-settings-label">English (Default)</div>
+                <div class="voice-settings-right">
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="voice-settings-explainer">
+            See auto-generated closed captions for all videos when available.<br>
+            If this is off, you may still see translated captions for videos in other languages.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <div id="language-settings-modal" class="modal-overlay hidden">
+      <div class="modal-dialog voice-settings-dialog">
+        <div class="voice-settings-content">
+          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 18px;">
+            <span class="voice-settings-title">Language settings</span>
+            <button class="modal-close" id="close-language-settings"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="voice-settings-section">
+            <div class="voice-settings-card">
+              <div class="voice-settings-row">
+                <div class="voice-settings-label">English (Default)</div>
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="voice-settings-row">
+                <div class="voice-settings-label">Show closed captions</div>
+                <label class="switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="voice-settings-explainer">
+            See auto-generated closed captions for all videos when available.<br>
+            If this is off, you may still see translated captions for videos in other languages.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
